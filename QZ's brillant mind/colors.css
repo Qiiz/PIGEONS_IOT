@@ -1,0 +1,68 @@
+  .dotmap {
+    width: 1100px;
+    height: 550px;
+  
+    background-image: url('Satallite\ Map.jpeg');
+    
+  }
+  .dotmap .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .dot {
+    float: left;
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+  }
+
+  /* This will specific the color of the sectors plus background */
+  .nothing {
+    /* background: #fcfefe; */
+    background: #edd927;
+  }
+  .sectorA-outdoor {
+    background: #edd927;
+  }
+  .sectorB-indoor {
+    background: #2c7d9f;
+  }
+  .sectorC-indoor {
+    background: #673dbf;
+  }
+  .sectorD-indoor {
+    background: #e87ce6;
+  }
+  
+  /* This will specific status of bin color */
+
+  .status-available{
+    background: #2fa40f;
+  }
+  .status-full{
+    background: #cf353a;
+  }
+
+  .status-currentNode{
+    background: #0b52e0;
+  }
+
+  
+
+
+/* This will specific the water transparency */
+  @keyframes water {
+    0% {
+      background: lightcyan;
+    }
+    50% {
+      background: paleturquoise;
+    }
+    100% {
+      background: lightcyan;
+    }
+  }
+  

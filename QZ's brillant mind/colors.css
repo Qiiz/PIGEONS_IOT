@@ -3,6 +3,10 @@
     height: 550px;
   
     background-image: url('Satallite\ Map.jpeg');
+    background-repeat: no-repeat;
+    background-size: 950px 530px;
+
+
     
   }
   .dotmap .row:after {
@@ -22,15 +26,15 @@
   /* This will specific the color of the sectors plus background */
   .nothing {
     /* background: #fcfefe; */
-    background: #edd927;
+    background: rgb(255, 255, 255);
   }
   .sectorA-outdoor {
     background: #edd927;
   }
-  .sectorB-indoor {
+  .sectorB-outdoor {
     background: #2c7d9f;
   }
-  .sectorC-indoor {
+  .sectorC-outdoor {
     background: #673dbf;
   }
   .sectorD-indoor {

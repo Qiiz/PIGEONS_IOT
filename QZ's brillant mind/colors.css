@@ -40,6 +40,21 @@
   .sectorD-indoor {
     background: #66ffff;
   }
+  .sectorE-outdoor {
+    background: #6bb9b0;
+  }
+  .sectorF-outdoor {
+    background: #9fe3e6;
+  }
+  .sectorG-outdoor {
+    background: #f58231;
+  }
+  .sectorH-outdoor {
+    background: #e5bb8a;
+  }
+  .sectorI-outdoor {
+    background: #fabed4;
+  }
   
   /* This will specific status of bin color */
 

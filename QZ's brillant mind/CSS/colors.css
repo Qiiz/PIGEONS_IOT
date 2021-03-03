@@ -2,7 +2,7 @@
     width: 1100px;
     height: 550px;
     
-    background-image: url('\Satallite Map.jpeg');
+    background-image: url('.\Satallite Map.jpeg');
     background-repeat: no-repeat;
     background-size: 950px 530px;
 
@@ -53,17 +53,9 @@
   .status-currentNode{
     background: #0b52e0;
   }
-.right-side{
-  border: 5px solid grey;
-  background: grey;
-}
+
   
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  
-  padding: 10px;
-}
+
 
 /* This will specific the water transparency */
   @keyframes water {

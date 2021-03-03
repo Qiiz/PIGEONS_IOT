@@ -2,8 +2,16 @@ var x = "available" ;
 
 $(document).ready(function(){
     var data = '#status'
+    $.ajax({
+        type: "POST",
+        url: "./SP_algo.py",
+        success: Generate()
+        
+    })
+});
 
 
+function ChangeStatus(){
     if (x ==  "full")
         $(data).removeClass("nothing").addClass("status-full");
 
@@ -12,11 +20,16 @@ $(document).ready(function(){
     
     else if (x == "current")
         $(data).removeClass("nothing").addClass("status-currentNode");
+}
+function Generate (){
+    list = pythonfile();
+    console.log("qWEQWEQWE")
 
+}
 
-}); 
+function pythonfile(){
 
-
+}
 // To enable CORS in firefox
 
 /* 

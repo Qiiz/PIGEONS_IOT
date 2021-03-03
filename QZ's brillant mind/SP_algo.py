@@ -173,16 +173,3 @@ current_node = a
 print([(weight, [n.data for n in node]) for (weight, node) in w_graph.dijkstra(current_node)])
 
 
-
-
-with open("logic.js") as f:
-    lines = f.readlines()
-
-lines # ['This is the first line.\n', 'This is the second line.\n']
-
-lines[0] = 'var x = "available" ;\n'
-
-lines # ["This is the line that's replaced.\n", 'This is the second line.\n']
-
-with open("logic.js", "w") as f:
-    f.writelines(lines)

@@ -1,4 +1,5 @@
 import json
+from flask import Flask,json
 
 class Node:
   
@@ -144,6 +145,10 @@ class Graph:
                     dist[node.index][1] = list(dist[min_node][1])
                     dist[node.index][1].append(node)
         return dist  
+
+
+    def host_json_list():
+
 
 # Creation of the nodes, and specify the term for it.
 a = Node("A")

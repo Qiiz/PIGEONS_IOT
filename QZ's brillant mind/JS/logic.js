@@ -1,13 +1,11 @@
 var x = "available" ;
 
-$(document).ready(function(){
-    var data = '#status'
-    $.ajax({
-        type: "POST",
-        url: "./SP_algo.py",
-        success: Generate()
-        
-    })
+$.ajax({
+    type: "POST",
+    url: "./SP_algo.py",
+    dataType: "text",
+    }).done(function( o ) {
+        alert("OK");
 });
 
 

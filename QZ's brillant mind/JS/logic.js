@@ -15,8 +15,10 @@ function Generate (){
     console.log("qWEQWEQWE")
 
 }
+
 //dijkstra solve graph starting at s
-function solveMe() {const dijkstra = (edges,source,target) => {
+function solveMe(start, end) 
+{const dijkstra = (edges,source,target) => {
     const Q = new Set(),
           prev = {},
           dist = {},
@@ -88,68 +90,170 @@ function solveMe() {const dijkstra = (edges,source,target) => {
  
 //Testing algorithm
 let graph = []
-graph.push(["A1", "A2", 15])
+graph.push(["A1", "A2", 15]) 
 graph.push(["A1", "A3", 10])
-graph.push(["A1", "A4", 15])
-graph.push(["A1", "A5", 20])
-graph.push(["A2", "A3", 15])
+graph.push(["A1", "A4", 25]) 
+graph.push(["A1", "A5", 35])
+
+graph.push(["A2", "A3", 25])
 graph.push(["A2", "A4", 10])
-graph.push(["A2", "A5", 15])
+graph.push(["A2", "A5", 20])
+
 graph.push(["A3", "A4", 15])
-graph.push(["A3", "A5", 15])
+graph.push(["A3", "A5", 25])
+
 graph.push(["A4", "A5", 10])
 
-graph.push(["B1", "B2", 15])
+
+
+
+graph.push(["B1", "B2", 10])
 graph.push(["B1", "B3", 10])
-graph.push(["B1", "B4", 10])
-graph.push(["B1", "B5", 10])
-graph.push(["B2", "B3", 10])
-graph.push(["B2", "B4", 20])
+graph.push(["B1", "B4", 20])
+graph.push(["B1", "B5", 30])
+
+graph.push(["B2", "B3", 20])
+graph.push(["B2", "B4", 40])
 graph.push(["B2", "B5", 15])
-graph.push(["B3", "B4", 15])
-graph.push(["B3", "B5", 15])
+
+graph.push(["B3", "B4", 10])
+graph.push(["B3", "B5", 20])
+
 graph.push(["B4", "B5", 10])
 
-graph.push(["C1", "C2", 15])
-graph.push(["C1", "C3", 5])
-graph.push(["C1", "C4", 20])
+
+
+graph.push(["C1", "C2", 10])
+graph.push(["C1", "C3", 20])
+graph.push(["C1", "C4", 15])
 graph.push(["C1", "C5", 15])
-graph.push(["C1", "C6", 20])
+graph.push(["C1", "C6", 25])
+
 graph.push(["C2", "C3", 10])
-graph.push(["C2", "C4", 10])
-graph.push(["C2", "C5", 10])
-graph.push(["C2", "C6", 10])
+graph.push(["C2", "C4", 5])
+graph.push(["C2", "C5", 5])
+graph.push(["C2", "C6", 15])
+
 graph.push(["C3", "C4", 15])
-graph.push(["C3", "C5", 5])
-graph.push(["C3", "C6", ])
-graph.push(["C4", "C5", ])
-graph.push(["C4", "C6", ])
-graph.push(["C5", "C6", ])
+graph.push(["C3", "C5", 15])
+graph.push(["C3", "C6", 25])
 
-graph.push(["I1", "I2", ])
-graph.push(["I1", "I3", ])
-graph.push(["I1", "I4", ])
-graph.push(["I1", "I5", ])
-graph.push(["I2", "I3", ])
-graph.push(["I2", "I4", ])
-graph.push(["I2", "I5", ])
-graph.push(["I3", "I4", ])
-graph.push(["I3", "I5", ])
-graph.push(["I4", "I5", ])
+graph.push(["C4", "C5", 5])
+graph.push(["C4", "C6", 15])
 
-graph.push(["A5", "B5", ])
-graph.push(["A5", "B4", ])
-graph.push(["A5", "C6", ])
-
-graph.push(["A4", "C6", ])
-
-graph.push(["B4", "C6", ])
+graph.push(["C5", "C6", 10])
 
 
-let [path,length] = dijkstra(graph, "a", "e");
-console.log(path) //[ 'a', 'c', 'f', 'e' ]
-console.log(length) //20
+graph.push(["I1", "I2", 5])
+graph.push(["I1", "I3", 10])
+graph.push(["I1", "I4", 25])
+graph.push(["I1", "I5", 15])
+
+graph.push(["I2", "I3", 5])
+graph.push(["I2", "I4", 15])
+graph.push(["I2", "I5", 25])
+
+graph.push(["I3", "I4", 10])
+graph.push(["I3", "I5", 20])
+
+graph.push(["I4", "I5", 10])
+
+
+
+
+let [path,length] = dijkstra(graph, start, end);
+//console.log(path) //[ 'a', 'c', 'f', 'e' ]
+//console.log(length) //20
+return length
+
+}
+
+var permArr = [],
+  usedChars = [];
+// for permutation of the combination of all the dustbins and put into the array in one()
+function two(input) {
+    
+var i, ch;
+for (i = 0; i < input.length; i++) {
+    ch = input.splice(i, 1)[0];
+    usedChars.push(ch);
+    if (input.length == 0) {
+    permArr.push(usedChars.slice());
     }
+    two(input);
+    input.splice(i, 0, ch);
+    usedChars.pop();
+}
+return permArr
+};
+
+/* 
+NOTE FROM THE SHADY CODERS aka qz.................
+General flow of the code is run One()[general logic] -> Two( get permutation) then solveME(get the distance)
+Things we still need to do:
+1) Pull the dustbin array from db
+2) starting point also need pull from db
+*/
+function one()
+{
+    // Take in from parameter
+    var index;
+    var computedValue = [];
+    var temp =null;
+    var dustbins = ["A1", "A2", "A3","A4","A5"];
+    var startingPoint = "A5";
+    var asd = two(dustbins);
+    
+    //first for loop to loop thru the array list like the one below: 
+    // 0: (3) ["A1", "A2", "A3"]
+    // 1: (3) ["A1", "A3", "A2"]
+    // 2: (3) ["A2", "A1", "A3"]
+    // 3: (3) ["A2", "A3", "A1"]
+    // 4: (3) ["A3", "A1", "A2"]
+    // 5: (3) ["A3", "A2", "A1"]
+    
+    for (i = 0; i < asd.length; i++) {
+        // force any set that is not equals to the startpoint as the maximum value
+        if(asd[i][0] != startingPoint){
+            computedValue.push(1000)
+         } 
+         else{
+             // entering this means the first element is the same as the starting position of the cleaner
+            for (j = 0; j < asd[i].length; j++){
+                if(j+2 > asd[i].length){
+                    break
+                }
+                else{
+                    // will run the solveme() to get the distance and compute the total cost for that path
+                temp +=solveMe(asd[i][j], asd[i][j+1])
+                }           
+            }
+            //push the sum into computed value so that we can know the min amount later.
+            computedValue.push(temp)
+            temp=0
+        }
+    
+
+    }  
+    console.log(computedValue);
+    console.log(asd);
+    // get the min value index to refer back to original array
+    index = computedValue.indexOf(Math.min(...computedValue))
+    
+    console.log(index);
+    console.log(asd[index]);
+    var htmlDatas="<span>Sector 1</span><br><span>Shortest path: "+ asd[index] + " </span>" ;
+    $("#Right-side").html(htmlDatas)
+
+
+}
+
+
+
+
+
+
+
 
 // To enable CORS in firefox
 
